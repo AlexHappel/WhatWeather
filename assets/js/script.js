@@ -24,7 +24,7 @@ function getWeather(city) {
 function displayCurrentWeather(data) {
     const currentWeather = data.list[0];
     const weatherIcon = currentWeather.weather[0].icon;
-    const iconUrl = `http://openweathermap.org/img/wn/${weatherIcon}.png`;
+    const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}.png`;
     const weatherContainer = document.getElementById('current-weather');
     weatherContainer.innerHTML = `
         <h2>${data.city.name}</h2>
@@ -42,7 +42,7 @@ function displayForecast(data) {
     forecastContainer.innerHTML = '<h2>5-Day Forecast</h2>';
     forecast.forEach(day => {
         const weatherIcon = day.weather[0].icon;
-        const iconUrl = `http://openweathermap.org/img/wn/${weatherIcon}.png`;
+        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}.png`;
         forecastContainer.innerHTML += `
             <div class="forecast-day">
                 <p>Date: ${new Date(day.dt * 1000).toLocaleDateString()}</p>
